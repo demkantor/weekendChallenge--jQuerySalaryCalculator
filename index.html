@@ -21,13 +21,15 @@
          <th>Anual Salary</th>
          <th></th> <!-- blank line for a blank box in table head -->
      </tr>
-     <h2>Add Employee</h2>
+     <span class="insertIntoTable">
+         <h2>Add Employee</h2>
      <input type="text" placeholder="First Name" id="firstNameIn">
      <input type="text" placeholder="Last Name" id="lastNameIn">
      <input type="Number" placeholder="Employee ID" id="idIn">
      <input type="text" placeholder="Title" id="titleIn">
      <input type="Number" placeholder="Anual Salary" id="salaryIn">
      <button id="submitButton">Submit</button>
+    </span>
         <tr class=employee>
         </tr>
         <tr>   
@@ -47,7 +49,8 @@
                 <td><button class="deleteButton">X</button></td>
             </tr>
         </table>
-        <div id=monthlySalary><h2>MonthlySalary:</h2></div>
+        <div id="calculateSalary"><h2>MonthlySalary: $<span class="monthlySalary">0</span></h2>
+        </div>
     </div>
 </body>
 </html>

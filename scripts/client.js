@@ -1,7 +1,7 @@
 console.log("Mellow like jellelo")
 
 //globals
-let employeeSalaryList = [];
+let employeeSalaryList = [0];
 
 
 $(document).ready(onReady);
@@ -31,6 +31,13 @@ function displayEmployee(){
 
 function displayMonthlySalary(){
     console.log("Hold it now...");
+    let changeToNumber = employeeSalaryList.map(Number);
+    let aunalSum = changeToNumber.reduce((a, b) => a + b, 0);
+    console.log(aunalSum);
+    let monthlySum = aunalSum / 12
+    console.log(monthlySum);
+    let el = $('.monthlySalary');
+    el.text(`${monthlySum}`);
 }
 
 // function addEmployee(){

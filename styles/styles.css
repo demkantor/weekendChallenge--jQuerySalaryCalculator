@@ -26,7 +26,7 @@ table {
   #mainComponent{
       flex: auto;
 }
-  #monthlySalary{
+  #calculateSalary{
       float: right;
 }
 .deleteButton {
