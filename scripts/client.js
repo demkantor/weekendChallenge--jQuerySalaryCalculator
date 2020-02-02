@@ -9,6 +9,7 @@ $(document).ready(onReady);
 function onReady(){
     console.log("cool like lemonade");
     $('#submitButton').on('click', displayEmployee);
+    $("#tableBody").on('click', ".employee", ".deleteButton", deleteEmployee);
 }
 function displayEmployee(){
     console.log('in displayEmployee');
@@ -29,6 +30,13 @@ function displayEmployee(){
     displayMonthlySalary();
 }//end displayEmployee
 
+function deleteEmployee(){
+    let el = $(this);
+    console.log(el);
+    el.remove();
+}//end delete employee
+
+
 function displayMonthlySalary(){
     console.log("Hold it now...");
     let changeToNumber = employeeSalaryList.map(Number);
@@ -38,7 +46,15 @@ function displayMonthlySalary(){
     console.log(monthlySum);
     let el = $('.monthlySalary');
     el.text(`${monthlySum}`);
-}
+}//end displayMonthlySalary
+
+
+
+
+
+
+
+
 
 // function addEmployee(){
 //     console.log('in addEmployee');
