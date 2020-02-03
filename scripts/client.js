@@ -38,6 +38,7 @@ function deleteEmployeeSalary(){
       potato.text(`${fixedMonthlySum}`);
       if (monthlySum > 20000){
         $('.monthlySalary').css('color', 'red');
+            alert("We still need to shed some weight! Fire Marry too!");
     } else {
         $('.monthlySalary').css('color', 'black');
     }
@@ -85,6 +86,7 @@ function displayMonthlySalary(){
     el.text(`${fixedMonthlySum}`);
     if (monthlySum > 20000){
         $('.monthlySalary').css('color', 'red');
+        alert("We need to get back in the black! Quick, fire Dave!");
     }
 }//end displayMonthlySalary
 
