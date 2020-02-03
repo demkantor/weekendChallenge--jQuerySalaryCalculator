@@ -1,13 +1,16 @@
-body{
+  body{
     background-color: bisque;
+    font-family: 'Trebuchet MS';
+    -webkit-font-smoothing: antialiased;
 }
-table {
+  table {
     border-collapse: collapse;
     width: 100%;
 }
   th, td {
-    text-align: left;
-    padding: 8px;classname: 
+    text-align: center;
+    text-transform: uppercase;
+    padding: 8px;
 }
   tr:nth-child(even){
     background-color: #f2f2f2;
@@ -15,6 +18,9 @@ table {
   th {
     background-color: #2C3852;
     color: white;
+    font-size: 20px;
+}
+  td {
     font-size: 18px;
 }
   header {
@@ -23,11 +29,13 @@ table {
     height: 600px;
     background-color: #E3E4DE;
 }
-  #mainComponent{
-      flex: auto;
+  #mianComponent{
+    flex: auto;
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
   #calculateSalary{
-      float: right;
+    float: right;
 }
 .deleteButton {
 	background-color:#7892c2;
@@ -39,7 +47,7 @@ table {
 	font-family:Trebuchet MS;
 	font-size:15px;
 	font-weight:bold;
-	padding:10px 13px;
+	padding:8px 11px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
 }
