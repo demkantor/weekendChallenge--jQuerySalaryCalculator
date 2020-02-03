@@ -17,12 +17,29 @@ function deleteEmployee(){
 }//end delete employee
 
 function deleteEmployeeSalary(){
+    
+    //just testing to find the value so i can find index in list array to remove
+    let txt = $(this).parents('tr').find("td:eq(1)").text();
+    console.log(txt);
+    let tuna = $(this).parents('tr').find("td:eq(1)").text();
+    console.log(tuna);
+    let taco = $(this).closest('tr').find('td:eq(1)').text();
+    console.log(taco);
     let el = $(this).parent();
     console.log(el);
     let moneyName = document.getElementsByClassName('.employee');
     console.log(moneyName);
     let molla = document.getElementById('tableBody').getElementsByClassName('money');
     console.log(molla);
+
+    //fake removal until i find the actual index
+      employeeSalaryList.splice(1,1);
+      let changeToNumber = employeeSalaryList.map(Number);
+      let aunalSum = changeToNumber.reduce((a, b) => a + b, 0);
+      let monthlySum = aunalSum / 12
+      let fixedMonthlySum = (Math.round(monthlySum * 100) / 100).toFixed(2);
+      let potato = $('.monthlySalary');
+      potato.text(`${fixedMonthlySum}`);
 }//remove salary of deleted employee from total
 
 function displayEmployee(){
