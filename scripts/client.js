@@ -7,39 +7,41 @@ $(document).ready(onReady);
 
 function onReady(){
     $('#submitButton').on('click', displayEmployee);
-    $("#tableBody").on('click', ".employee", ".deleteButton", deleteEmployee);
+    $("#tableBody").on('click', ".employee", ".deleteButton", deleteEmployeeSalary);
 }
 
 function deleteEmployee(){
-    deleteEmployeeSalary();
     let el = $(this);
     el.remove();
-}//end delete employee
+}//no longer needed as of now but being i kinda hacked the next bit ugly like ill hang onto it
 
 function deleteEmployeeSalary(){
-    
-    //just testing to find the value so i can find index in list array to remove
-    let txt = $(this).parents('tr').find("td:eq(1)").text();
-    console.log(txt);
-    let tuna = $(this).parents('tr').find("td:eq(1)").text();
-    console.log(tuna);
-    let taco = $(this).closest('tr').find('td:eq(1)').text();
-    console.log(taco);
-    let el = $(this).parent();
-    console.log(el);
-    let moneyName = document.getElementsByClassName('.employee');
-    console.log(moneyName);
-    let molla = document.getElementById('tableBody').getElementsByClassName('money');
-    console.log(molla);
+
+    //finding the value of salary to remove from monthly sum
+    let salaryToRemove = $(this).closest('tr').find('td:eq(4)').text();
+    //console.log(salaryToRemove);
+
+    //force string into number and turn neagtive. then push negative value to array
+    let negative = Math.abs(salaryToRemove) * -1;
+    employeeSalaryList.push(negative);
+
+    //remove row from table
+    let el = $(this);
+    el.remove();
 
     //fake removal until i find the actual index
-      employeeSalaryList.splice(1,1);
       let changeToNumber = employeeSalaryList.map(Number);
       let aunalSum = changeToNumber.reduce((a, b) => a + b, 0);
       let monthlySum = aunalSum / 12
       let fixedMonthlySum = (Math.round(monthlySum * 100) / 100).toFixed(2);
       let potato = $('.monthlySalary');
       potato.text(`${fixedMonthlySum}`);
+      if (monthlySum > 20000){
+        $('.monthlySalary').css('color', 'red');
+    } else {
+        $('.monthlySalary').css('color', 'black');
+    }
+    //now go and delete the row
 }//remove salary of deleted employee from total
 
 function displayEmployee(){
