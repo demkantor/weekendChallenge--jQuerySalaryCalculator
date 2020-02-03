@@ -49,6 +49,12 @@ function displayEmployee(){
     //show monthly salay in DOM
     displayMonthlySalary();
    }
+   //reset inputs
+    $("#firstNameIn").val('');
+    $("#lastNameIn").val('');
+    $("#idIn").val('');
+    $("#titleIn").val('');
+    $("#salaryIn").val('');
 }//end displayEmployee
 
 function displayMonthlySalary(){
